@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>happy boyfriend day ♡</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono&family=Gaegu:wght@400;700&display=swap');
+:root{--cream:#fff6eb;--paper:#fffaf3;--red:#c91d3d;--dark:#8f1830;--piece:#ef657d;--piece2:#f47f92;--ink:#5d202d;--deep:#711126}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#74162b;color:var(--ink);font-family:Gaegu,cursive}
+.page{width:min(1180px,95vw);margin:22px auto;background:var(--paper);border:3px solid #681123;border-radius:22px;overflow:hidden;box-shadow:12px 14px #3e071633}
+.browser{height:53px;background:#ffe6d4;border-bottom:2px solid #e8b3a0;display:flex;align-items:center;gap:8px;padding:0 15px;font:12px 'DM Mono',monospace}
+.dot{width:13px;height:13px;border-radius:50%;border:2px solid #8d4b43}.r{background:#ed6a63}.y{background:#efcc59}.g{background:#82bb73}.tab{margin-left:14px;flex:1;color:#711126}
+.main{min-height:790px;position:relative;overflow:hidden;background:radial-gradient(circle at 12% 12%,#cf21420b 0 4px,transparent 5px),radial-gradient(circle at 88% 28%,#cf21420b 0 3px,transparent 4px),var(--paper)}
+.intro{position:absolute;left:5%;top:18%;width:275px;background:#fff8ef;border:2px dashed #dd9992;padding:24px;transform:rotate(-2deg);box-shadow:8px 9px #f0d1c2;z-index:3}
+.eyebrow{font-size:20px;line-height:1.05;color:#8d3c4c}h1{font-size:68px;line-height:.78;color:var(--red);margin:14px 0 20px}.intro p{font-size:25px;line-height:1.02;margin:0 0 16px}.pill{display:inline-block;border:2px solid var(--red);border-radius:999px;padding:7px 14px;background:#fff;font-size:19px}
+.hint{position:absolute;left:64%;top:8%;transform:translateX(-50%) rotate(3deg);padding:8px 17px;background:#fff;border:2px solid #711126;border-radius:999px;font-size:21px;z-index:4}
+.heart-area{position:absolute;left:51%;top:53%;transform:translate(-50%,-50%);width:min(690px,70vw);min-width:500px;z-index:2}
+.heart-svg{display:block;width:100%;height:auto;overflow:visible;filter:drop-shadow(9px 13px 0 #74162b26)}
+.heart-base{fill:#c91d3d}
+.puzzle-layer{pointer-events:auto}
+.piece{cursor:pointer;outline:none;pointer-events:all}
+.piece polygon{fill:var(--piece);stroke:#ffc0c8;stroke-width:5;vector-effect:non-scaling-stroke;transition:fill .18s,stroke .18s;pointer-events:all}
+.piece text{fill:#fff7ed;font-family:Gaegu,cursive;font-size:25px;font-weight:700;text-shadow:1.5px 2px #9b1730;pointer-events:none;transition:transform .18s}
+.piece:hover polygon,.piece:focus polygon{fill:var(--piece2);stroke:#ffe0e5}
+.piece:hover text,.piece:focus text{transform:scale(1.12)}
+.piece.clicked polygon{fill:var(--dark);stroke:#aa2944}
+.piece.clicked text{fill:#ffe5e9}
+.progress{position:absolute;bottom:3.5%;left:51%;transform:translateX(-50%);width:min(450px,70%);text-align:center;z-index:5}
+.progress-row{display:flex;align-items:center;gap:12px;font-size:22px}
+.track{flex:1;height:15px;border:2px solid #711126;border-radius:999px;overflow:hidden;background:white}
+.fill{width:0;height:100%;background:linear-gradient(90deg,#e84a66,#a91531);transition:width .3s}
+.progress-note{font-size:17px;color:#905a65;margin-top:3px}
+.reveal{display:none;background:#681226;color:#ffece2;padding:72px 20px 80px;text-align:center}
+.reveal.show{display:block;animation:up .65s ease}@keyframes up{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+.reveal h2{font-size:70px;line-height:.82;color:#fff0e6;margin:14px 0}.reveal p{font-size:29px;line-height:1.02}
+.song{width:min(560px,94%);margin:25px auto 0;background:#fff7ed;color:var(--ink);border:3px solid #ffb5bf;border-radius:23px;padding:24px;box-shadow:10px 12px #3b061344}
+.record{width:160px;height:160px;border-radius:50%;margin:auto;border:10px solid #f0aab5;background:repeating-radial-gradient(circle,#cb2747 0 5px,#aa1736 6px 9px);display:grid;place-items:center;animation:spin 5s linear infinite paused}
+.record.playing{animation-play-state:running}.record:after{content:'♡';display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:#ffe3d2;border:3px solid #cb2747;color:#cb2747;font-size:25px}@keyframes spin{to{transform:rotate(360deg)}}
+.song h3{font-size:34px;color:var(--red);margin:12px 0 0}.song small{font-size:18px;color:#925d68}.btn{margin-top:14px;border:2px solid #711126;background:var(--red);color:#fff;border-radius:999px;padding:9px 20px;font:700 21px Gaegu;cursor:pointer}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px;background:#420818a3;backdrop-filter:blur(5px);z-index:20}.modal.open{display:flex}
+.card{width:min(550px,94vw);position:relative;background:#fff8ed;border:3px solid #711126;border-radius:23px;padding:28px;box-shadow:12px 14px #2e040c55}.close{position:absolute;right:13px;top:7px;border:0;background:none;font-size:34px;color:#711126;cursor:pointer}.icon{font-size:60px}.card h2{font-size:40px;line-height:.86;color:var(--red);margin:0 0 9px}.card p{font-size:29px;line-height:1.03;margin:0}.count{font:11px 'DM Mono';color:#95616a;margin-top:19px}
+
+.doodle{position:absolute;color:#d72b49;font-size:34px;z-index:1;animation:floaty 3.5s ease-in-out infinite}.d1{left:3%;top:8%}.d2{left:38%;top:7%;font-size:23px;animation-delay:.5s}.d3{right:4%;top:15%;animation-delay:1s}.d4{right:8%;bottom:15%;font-size:28px;animation-delay:1.4s}.d5{left:31%;bottom:10%;font-size:27px;animation-delay:.8s}@keyframes floaty{0%,100%{transform:translateY(0) rotate(-8deg)}50%{transform:translateY(-8px) rotate(8deg)}}
+.intro:before{content:'🎀';position:absolute;right:-20px;top:-30px;font-size:42px;transform:rotate(10deg)}
+.intro:after{content:'♡';position:absolute;left:-18px;bottom:-24px;color:#d72b49;font-size:36px;transform:rotate(-15deg)}
+.card:before{content:'♡  ✦  ♡';position:absolute;left:0;right:0;top:-28px;text-align:center;color:#ffd0d8;font-size:25px;letter-spacing:8px}
+.spotify{width:min(560px,94%);margin:22px auto 0;border-radius:14px;overflow:hidden;box-shadow:0 8px 20px #2f061533}
+.spotify iframe{display:block;width:100%;height:152px;border:0}
+.song-note{font-size:19px!important;color:#955e69;margin:13px 0 0!important}
+@media(max-width:900px){.main{min-height:930px}.intro{position:relative;left:auto;top:auto;margin:34px auto 0;width:280px}.hint{left:50%;top:42%;font-size:18px}.heart-area{top:60%;left:50%;width:94vw;min-width:0}.progress{bottom:2%;left:50%;width:82%}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="browser"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><div class="tab">♥ to my favourite person ♡</div>♡</div>
+<main class="main">
+<div class="doodle d1">♡</div><div class="doodle d2">✦</div><div class="doodle d3">♡</div><div class="doodle d4">★</div><div class="doodle d5">♡</div>
+<div class="intro"><div class="eyebrow">a tiny website made with way too much love</div><h1>happy<br>boyfriend<br>day ♡</h1><p>there are 20 tiny pieces of my heart waiting for you.</p><span class="pill">click every piece ↓</span></div>
+<div class="hint">click the pieces ♡</div>
+<div class="heart-area">
+<svg class="heart-svg" viewBox="0 0 700 620" preserveAspectRatio="xMidYMid meet">
+<defs><clipPath id="heartClip"><path d="M350 570 C328 548 95 392 95 205 C95 105 168 55 244 70 C296 80 332 116 350 151 C368 116 404 80 456 70 C532 55 605 105 605 205 C605 392 372 548 350 570 Z"/></clipPath></defs>
+<path class="heart-base" d="M350 570 C328 548 95 392 95 205 C95 105 168 55 244 70 C296 80 332 116 350 151 C368 116 404 80 456 70 C532 55 605 105 605 205 C605 392 372 548 350 570 Z"/>
+<g class="puzzle-layer" clip-path="url(#heartClip)">
+<g class="piece" data-index="0" tabindex="0" role="button"><polygon points="-1602.5,-718.7 37.7,-1853.1 236.7,137.0 186.4,175.7"></polygon><text x="185.0" y="133.0" text-anchor="middle">♡</text></g><g class="piece" data-index="1" tabindex="0" role="button"><polygon points="37.7,-1853.1 350.0,-1871.5 350.0,128.5 280.0,165.8 236.7,137.0"></polygon><text x="285.0" y="123.0" text-anchor="middle">✦</text></g><g class="piece" data-index="2" tabindex="0" role="button"><polygon points="350.0,-1871.5 662.3,-1853.1 463.3,137.0 420.0,165.8 350.0,128.5"></polygon><text x="415.0" y="123.0" text-anchor="middle">♡</text></g><g class="piece" data-index="3" tabindex="0" role="button"><polygon points="662.3,-1853.1 2302.5,-718.7 513.6,175.7 463.3,137.0"></polygon><text x="515.0" y="133.0" text-anchor="middle">★</text></g><g class="piece" data-index="4" tabindex="0" role="button"><polygon points="-1602.5,-718.7 186.4,175.7 195.0,227.3 -1617.4,1073.1"></polygon><text x="145.0" y="213.0" text-anchor="middle">✉</text></g><g class="piece" data-index="5" tabindex="0" role="button"><polygon points="221.5,243.6 280.0,218.0 280.0,165.8 236.7,137.0 186.4,175.7 195.0,227.3"></polygon><text x="235.0" y="198.0" text-anchor="middle">♡</text></g><g class="piece" data-index="6" tabindex="0" role="button"><polygon points="280.0,165.8 350.0,128.5 350.0,217.7 304.9,235.1 280.0,218.0"></polygon><text x="325.0" y="198.0" text-anchor="middle">☻</text></g><g class="piece" data-index="7" tabindex="0" role="button"><polygon points="420.0,218.0 420.0,165.8 350.0,128.5 350.0,217.7 395.1,235.1"></polygon><text x="375.0" y="198.0" text-anchor="middle">♡</text></g><g class="piece" data-index="8" tabindex="0" role="button"><polygon points="420.0,218.0 420.0,165.8 463.3,137.0 513.6,175.7 505.0,227.3 478.5,243.6"></polygon><text x="465.0" y="198.0" text-anchor="middle">♫</text></g><g class="piece" data-index="9" tabindex="0" role="button"><polygon points="513.6,175.7 2302.5,-718.7 2317.4,1073.1 505.0,227.3"></polygon><text x="555.0" y="213.0" text-anchor="middle">♡</text></g><g class="piece" data-index="10" tabindex="0" role="button"><polygon points="195.0,227.3 221.5,243.6 228.7,308.6 -1538.8,1244.4 -1617.4,1073.1"></polygon><text x="180.0" y="288.0" text-anchor="middle">★</text></g><g class="piece" data-index="11" tabindex="0" role="button"><polygon points="221.5,243.6 228.7,308.6 264.7,325.6 316.4,296.6 304.9,235.1 280.0,218.0"></polygon><text x="270.0" y="278.0" text-anchor="middle">♡</text></g><g class="piece" data-index="12" tabindex="0" role="button"><polygon points="395.1,235.1 350.0,217.7 304.9,235.1 316.4,296.6 350.0,308.9 383.6,296.6"></polygon><text x="350.0" y="263.0" text-anchor="middle">∞</text></g><g class="piece" data-index="13" tabindex="0" role="button"><polygon points="420.0,218.0 478.5,243.6 471.3,308.6 435.3,325.6 383.6,296.6 395.1,235.1"></polygon><text x="430.0" y="278.0" text-anchor="middle">♡</text></g><g class="piece" data-index="14" tabindex="0" role="button"><polygon points="471.3,308.6 478.5,243.6 505.0,227.3 2317.4,1073.1 2238.8,1244.4"></polygon><text x="520.0" y="288.0" text-anchor="middle">✦</text></g><g class="piece" data-index="15" tabindex="0" role="button"><polygon points="228.7,308.6 264.7,325.6 279.9,416.9 -798.2,2101.4 -1538.8,1244.4"></polygon><text x="225.0" y="373.0" text-anchor="middle">☾</text></g><g class="piece" data-index="16" tabindex="0" role="button"><polygon points="316.4,296.6 350.0,308.9 350.0,391.1 279.9,416.9 264.7,325.6"></polygon><text x="315.0" y="358.0" text-anchor="middle">♡</text></g><g class="piece" data-index="17" tabindex="0" role="button"><polygon points="435.3,325.6 420.1,416.9 350.0,391.1 350.0,308.9 383.6,296.6"></polygon><text x="385.0" y="358.0" text-anchor="middle">♧</text></g><g class="piece" data-index="18" tabindex="0" role="button"><polygon points="420.1,416.9 435.3,325.6 471.3,308.6 2238.8,1244.4 1498.2,2101.4"></polygon><text x="475.0" y="373.0" text-anchor="middle">♡</text></g><g class="piece" data-index="19" tabindex="0" role="button"><polygon points="279.9,416.9 350.0,391.1 420.1,416.9 1498.2,2101.4 -798.2,2101.4"></polygon><text x="350.0" y="453.0" text-anchor="middle">♥</text></g>
+</g>
+</svg>
+</div>
+<div class="progress"><div class="progress-row"><span id="progressText">0 / 20</span><div class="track"><div class="fill" id="fill"></div></div></div><div class="progress-note" id="progressNote">collect every piece of my heart ♡</div></div>
+</main>
+
+<section class="reveal" id="reveal">
+<div style="font-size:30px;letter-spacing:11px">✦ ♡ ✦ ♡ ✦</div>
+<h2>you found<br>my whole heart ♡</h2>
+<p>okay... one last thing.<br>i saved this for the very end.</p>
+<div class="song"><div class="record" id="record"></div><h3>our song ♡</h3><small>the song waiting for you at the end of my heart</small>
+<div class="spotify"><iframe src="https://open.spotify.com/embed/track/5iFwAOB2TFkPJk8sMlxP8g?utm_source=generator&theme=0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+<p class="song-note">put your headphones on, handsome ♡</p>
+<a class="btn" href="https://open.spotify.com/track/5iFwAOB2TFkPJk8sMlxP8g" target="_blank" rel="noopener">♡ open in Spotify</a></div>
+<p style="margin-top:27px">every little piece was just another way of saying...<br><strong>I love you. ♡</strong></p>
+</section>
+</div>
+
+<div class="modal" id="modal"><div class="card"><button class="close" id="close">×</button><div class="icon" id="modalIcon"></div><h2 id="modalTitle"></h2><p id="modalText"></p><div class="count" id="modalCount"></div></div></div>
+
+<script>
+const thoughts=[
+{"icon":"♡","title":"your voice","text":"Your voice is deep, smooth and comforting like a warm cup of coffee. It is the most soothing thing I have ever heard, no wonder I need your voice to fall asleep."},
+{"icon":"♥","title":"your face","text":"Respectfully, you are the most handsome man I've ever talked to. Hot, charming and cute all together. (Makes me kinda shy sometimes)."},
+{"icon":"✦","title":"your eyes","text":"Those beautiful big eyes with long lashes are easily in the top 3 most beautiful things I've ever witnessed in this lifetime."},
+{"icon":"☻","title":"your humour","text":"I might not show it but I love when you're witty with me and you roast me. It always brings a smile on my face."},
+{"icon":"♡","title":"your kindness","text":"The way you take care of your family, friends, strangers, animals and notice little things genuinely leaves me in awe."},
+{"icon":"★","title":"your work ethic","text":"The way you can work for long hours without complain is so commendable. Let me tell you you're absolutely undefeatable."},
+{"icon":"☾","title":"your calmness","text":"You're the calm in the storm for me. The way you always calm me down and blends with my chaos is so cute and funsy."},
+{"icon":"♡","title":"your efforts","text":"Your love is not just mere words. I see it, I feel it in your actions and it's loud. Thankyou for making me feel so special."},
+{"icon":"♥","title":"okay, I accept...","text":"You're big and tall and that makes me a little weak on knees (sometimes)."},
+{"icon":"✦","title":"your EQ","text":"The way you see people and understand their emotions is impressive asf. A man with high EQ?? What else can I ask for."},
+{"icon":"♛","title":"gentleman","text":"You're not like other boys trying to chase short term pleasures. You know what you want and you get it. You're A MAN."},
+{"icon":"✧","title":"saviour","text":"Like how do you have the solution to every single problem and how do you know everything. You're a walking GPT. I bow down sir."},
+{"icon":"♡","title":"you always take my stand","text":"You support me throughout my career. I can never thank you enough for being a supportive and such a progressive partner."},
+{"icon":"🍳","title":"my personal chef","text":"I'm grateful for you blessing me with amazing recipes and ideas."},
+{"icon":"✉","title":"you remember everything","text":"You remember every single detail and never fail to make my day. I feel so beautiful, special and loved when I'm with you. You bring all the magic I need in my life."},
+{"icon":"♡","title":"thank you for forgiving me","text":"Thankyou love, for being forgiving of my mistakes and flaws, I know it takes a big heart to do that."},
+{"icon":"🧸","title":"my safe place","text":"Thankyou for not making me feel like I'm not enough and letting me be myself. I know I can be how I want without getting judged when I'm with you. Thankyou for giving me that safe place."},
+{"icon":"☾","title":"you brought the magic back","text":"Thankyou for restoring my faith in things I considered irrational and unnecessary, for making me believe in the magic of God and universe again."},
+{"icon":"✦","title":"you make me better","text":"Thankyou for making me a better person in every sense. I wake up every day with the thought to be better, kinder, more productive."},
+{"icon":"♥","title":"from my whole heart","text":"At last, I love you so much Pratham, from every single bone and fibre of my body, from my body and soul. To know you is to love you. You're the most gorgeous and amazing person. 8 billion people in this world and we still met. I don't know what the future holds for us but I can say this with assurity that you always hold a special place in my heart till my heart beats. I wish you that you live a life full of love, happiness, colours, fun, faith and magic."}
+];
+const pieces=[...document.querySelectorAll('.piece')];
+const found=new Set();
+const modal=document.getElementById('modal');
+const reveal=document.getElementById('reveal');
+const fill=document.getElementById('fill');
+
+function openPiece(i){
+  const p=pieces[i];
+  if(!p) return;
+  const first=!found.has(i);
+  found.add(i);
+  p.classList.add('clicked');
+  const t=thoughts[i];
+  document.getElementById('modalIcon').textContent=t.icon;
+  document.getElementById('modalTitle').textContent=t.title;
+  document.getElementById('modalText').textContent=t.text;
+  document.getElementById('modalCount').textContent=`${found.size} / 20 pieces of my heart found ♡`;
+  modal.classList.add('open');
+
+  document.getElementById('progressText').textContent=`${found.size} / 20`;
+  fill.style.width=`${found.size*5}%`;
+
+  if(found.size===20){
+    document.getElementById('progressNote').textContent='complete ♡';
+    setTimeout(()=>{
+      reveal.classList.add('show');
+      reveal.scrollIntoView({behavior:'smooth',block:'start'});
+    },450);
+  } else {
+    const left=20-found.size;
+    document.getElementById('progressNote').textContent=`${left} more piece${left===1?'':'s'} to go ♡`;
+  }
+}
+
+pieces.forEach((p,i)=>{
+  p.addEventListener('click',()=>openPiece(i));
+  p.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' ' ){e.preventDefault();openPiece(i);}
+  });
+});
+
+document.getElementById('close').addEventListener('click',()=>modal.classList.remove('open'));
+modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
+
+</script>
+</body>
+</html>
